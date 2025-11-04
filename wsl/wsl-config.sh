@@ -18,10 +18,10 @@ if [ -f "/etc/wsl.conf" ]; then
 fi
 
 # Ask for user confirmation
-read -p "Add configuration to /etc/wsl.conf? (y/N): " -r response < /dev/tty
+read -p "Add configuration to /etc/wsl.conf? (y/N): " -r response
 
 case ${response,,} in
-    y|yes)
+    y)
         clear
         echo "$CONFIG" | sudo tee -a /etc/wsl.conf > /dev/null
         echo "Configuration added. Updated /etc/wsl.conf content:"

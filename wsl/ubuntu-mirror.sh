@@ -24,7 +24,7 @@ cat /etc/apt/sources.list.d/ubuntu.sources
 
 # Update and upgrade
 echo
-read -p "Execute 'apt update' and 'apt upgrade'? (y/N): " -r response < /dev/tty
+read -p "Execute 'apt update' and 'apt upgrade'? (y/N): " -r response
 case ${response,,} in
     y)
         sudo sudo apt update && sudo apt upgrade -y
