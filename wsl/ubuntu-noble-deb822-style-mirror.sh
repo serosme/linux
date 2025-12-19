@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Bash strict mode
+set -e
+
 # Clear screen
 clear
 
@@ -24,10 +27,11 @@ cat /etc/apt/sources.list.d/ubuntu.sources
 
 # Update and upgrade
 echo
-read -p "Execute 'apt update' and 'apt upgrade'? (y/N): " -r response
+read -p "Execute 'apt update' and 'apt upgrade'? (y/N): " -r response < /dev/tty
 case ${response,,} in
     y)
-        sudo sudo apt update && sudo apt upgrade -y
+        sudo apt update
+        sudo apt upgrade -y
         ;;
     *)
         echo "Skipped update and upgrade."
